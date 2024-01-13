@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Card: Identifiable, Equatable {
+struct Card: Equatable {
     var id = UUID()
     var isShown: Bool = false
     var isPaired: Bool = false

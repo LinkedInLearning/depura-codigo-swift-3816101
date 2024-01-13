@@ -11,29 +11,19 @@ import Foundation
 struct Game {
     var cards: [Card]
     
-    init(cards: [Card]) {
-        self.cards = cards
-        cards.forEach { card  in
-            let pairCard = Card(imageContent: card.imageContent)
-            self.cards.append(pairCard)
-        }
-    }
+   
     
     mutating func selectCard(_ card: Card) {
-        if let cardIndex = cards.firstIndex(where: { c in c == card }) {
+        if let cardIndex = cards.firstIndex(where: { c in c.imageContent == card.imageContent }) {
             cards.faceDownNotPaired()
             let otherCardIndex = cards.getFacedCardIndex()
             
             cards[cardIndex].isShown = cardIndex != otherCardIndex
-            
-            guard let otherCardIndex else {
-                return
+            cards[cardIndex].isPaired = cards.areEquivalent(otherCardIndex!, cardIndex)
+            if otherCardIndex != nil {
+                cards[otherCardIndex!].isShown = cardIndex != otherCardIndex
+                cards[otherCardIndex!].isPaired = cards.areEquivalent(otherCardIndex!, cardIndex)
             }
-            
-            cards[cardIndex].isPaired = cards.areEquivalent(otherCardIndex, cardIndex)
-            cards[otherCardIndex].isShown = cardIndex != otherCardIndex
-            cards[otherCardIndex].isPaired = cards.areEquivalent(otherCardIndex, cardIndex)
-            
         }
     }
     
@@ -44,7 +34,6 @@ struct Game {
     mutating func restart() {
         self.cards.indices.forEach({
             cards[$0].isShown = false
-            cards[$0].isPaired = false
         })
     }
     
