@@ -30,7 +30,7 @@ La rama `main` tiene el estado final del código, mientras que en la rama `error
 Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/radostina-tachova-chergarska).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com
-[lil-thumbnail-url]: https:
+[lil-course-url]: https://www.linkedin.com/learning/depura-el-codigo-swift
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D4E0DAQHKrUGl28hWRg/learning-public-crop_675_1200/0/1708518799815?e=2147483647&v=beta&t=REDfinLVYIbbE5NDp91_pgwCKcj1IvOTaYpdF9dsZMk
 
 [1]: # (End of ES-Instruction ###############################################################################################)
